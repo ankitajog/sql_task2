@@ -1,0 +1,15 @@
+show databases;
+create database emp_db;
+use emp_db;
+create table emp_tbl(emp_id int primary key,emp_name varchar(20) not null, emp_position varchar(20) not null , work_hour int default '8',salary int);
+desc emp_tbl;
+insert into emp_tbl values(101,'Peter Rock','Data Scientist',6,65000);
+insert into emp_tbl values(102,'Andrew Jobs','Peon',7,15000);
+insert into emp_tbl values(103,'Ronny Messy','Assistant',8,60000);
+insert into emp_tbl values(104,'Tom James','Production Assistant',5,60000);
+insert into emp_tbl(emp_id,emp_name,emp_position,salary) values(105,'William Smith','Quality Analalyst',40000);
+select * from emp_tbl;
+update emp_tbl set work_hour = 8 and salary = 45000  where emp_id=104 ;
+delete from emp_tbl where emp_id = 102;
+delete from emp_tbl;
+drop database emp_db ;
